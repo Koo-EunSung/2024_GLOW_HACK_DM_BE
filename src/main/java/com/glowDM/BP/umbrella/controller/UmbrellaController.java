@@ -39,4 +39,15 @@ public class UmbrellaController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/decrement")
+    @ResponseBody
+    public ResponseEntity<StoreDTO> decrementUmbrellaCount(@RequestParam String storeId) {
+        StoreDTO updatedStore = umbrellaService.decrementUmbrellaCount(storeId);
+        if (updatedStore != null) {
+            return ResponseEntity.ok(updatedStore);
+        } else {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
 }
