@@ -33,6 +33,11 @@ public class WebSecurityConfig {
                 .formLogin((formLogin) -> {
                     formLogin.disable();
                 })
+                .logout((logout) -> {
+                    logout
+                            .invalidateHttpSession(true)
+                            .deleteCookies("JSESSIONID", "remember - me");
+                })
                 .with(new customFilter(), AbstractHttpConfigurer::getClass)
                 .build();
     }
@@ -56,7 +61,6 @@ public class WebSecurityConfig {
     @Bean
     public WebSecurityCustomizer configure() {
         return (web) -> web.ignoring()
-                .requestMatchers(toH2Console())
                 .requestMatchers(PathRequest
                         .toStaticResources()
                         .atCommonLocations()

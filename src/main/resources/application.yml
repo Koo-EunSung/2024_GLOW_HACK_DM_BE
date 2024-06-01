@@ -9,10 +9,10 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://minsue9608:todnxksekd19!@mongocluster.7j9kmgm.mongodb.net/dream?retryWrites=true&w=majority&appName=mongoCluster
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-    username: sa
-  h2:
-    console:
-      enabled: true
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:mem:testdb
+#    username: sa
+#  h2:
+#    console:
+#      enabled: true

@@ -32,7 +32,6 @@ public class AuthService {
         String bcryptPw = pwEncoder.encode(req.getPassword());
         Member newMember = Member.builder()
                 .name(req.getName())
-                .number(req.getNumber())
                 .loginId(req.getLoginId())
                 .password(bcryptPw)
                 .businessNum(req.getBusinessNum())

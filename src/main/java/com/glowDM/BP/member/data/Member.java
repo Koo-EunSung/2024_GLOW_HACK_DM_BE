@@ -4,29 +4,25 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import java.util.Collection;
 import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+@Document(collection = "member")
 @NoArgsConstructor
-@Entity
 @Getter
 public class Member implements UserDetails {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String name;
 
-    private String number;
-
-    @Column(unique = true)
+    @Id
     private String loginId;
 
     private String password;
@@ -34,9 +30,8 @@ public class Member implements UserDetails {
     private String businessNum;
 
     @Builder
-    public Member(String name, String number, String loginId, String password, String businessNum) {
+    public Member(String name, String loginId, String password, String businessNum) {
         this.name = name;
-        this.number = number;
         this.loginId = loginId;
         this.password = password;
         this.businessNum = businessNum;

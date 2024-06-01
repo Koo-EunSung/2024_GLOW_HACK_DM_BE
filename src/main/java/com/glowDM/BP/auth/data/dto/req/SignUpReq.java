@@ -7,6 +7,5 @@ public class SignUpReq {
     private String name;
     private String loginId;
     private String password;
-    private String number;
     private String businessNum;
 }
