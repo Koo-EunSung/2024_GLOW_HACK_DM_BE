@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        foramt_sql: true
+  data:
+    mongodb:
+      uri: mongodb+srv://minsue9608:todnxksekd19!@mongocluster.7j9kmgm.mongodb.net/dream?retryWrites=true&w=majority&appName=mongoCluster
+  h2:
+    console:
+      enabled: true

@@ -1,6 +1,7 @@
 package com.glowDM.BP.umbrella.controller;
 
-import com.glowDM.BP.umbrella.dto.StoreDTO;
+import com.glowDM.BP.store.data.dto.StoreDTO;
+import com.glowDM.BP.umbrella.data.dto.req.UpdateUmbrellaCountReq;
 import com.glowDM.BP.umbrella.service.UmbrellaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +16,8 @@ public class UmbrellaController {
 
     // 우산 개수 등록
     @PostMapping("/{storeId}")
-    public ResponseEntity<StoreDTO> addUmbrellas(@PathVariable String storeId, @RequestParam int count) {
-        StoreDTO storeDTO = umbrellaService.addUmbrellas(storeId, count);
+    public ResponseEntity<StoreDTO> addUmbrellas(@PathVariable String storeId, @RequestBody UpdateUmbrellaCountReq req) {
+        StoreDTO storeDTO = umbrellaService.addUmbrellas(storeId, req.getNewCount());
 
         if (storeDTO != null) {
             return new ResponseEntity<>(storeDTO, HttpStatus.OK);
@@ -28,8 +29,8 @@ public class UmbrellaController {
 
     // 우산 개수 수정
     @PutMapping("/{storeId}")
-    public ResponseEntity<StoreDTO> updateUmbrellas(@PathVariable String storeId, @RequestParam int count) {
-        StoreDTO storeDTO = umbrellaService.updateUmbrellas(storeId, count);
+    public ResponseEntity<StoreDTO> updateUmbrellas(@PathVariable String storeId, @RequestBody UpdateUmbrellaCountReq req) {
+        StoreDTO storeDTO = umbrellaService.updateUmbrellas(storeId, req.getNewCount());
 
         if (storeDTO != null) {
             return new ResponseEntity<>(storeDTO, HttpStatus.OK);

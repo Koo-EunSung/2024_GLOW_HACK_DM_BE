@@ -1,4 +1,4 @@
-package com.glowDM.BP.umbrella.dto;
+package com.glowDM.BP.store.data.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,4 +15,6 @@ public class StoreDTO {
     private String name;
     private String address;
     private int umbrellaCount;
+    private double latitude;
+    private double longitude;
 }

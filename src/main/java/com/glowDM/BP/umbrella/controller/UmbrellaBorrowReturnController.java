@@ -1,6 +1,6 @@
 package com.glowDM.BP.umbrella.controller;
 
-import com.glowDM.BP.umbrella.dto.StoreDTO;
+import com.glowDM.BP.store.data.dto.StoreDTO;
 import com.glowDM.BP.umbrella.service.UmbrellaBorrowReturnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.glowDM.BP.umbrella.document;
+package com.glowDM.BP.store.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,4 +18,6 @@ public class Store {
     private String name;    // 가게 이름, 나중에 삭제...
     private String address; // 가게 주소
     private int umbrellaCount;  // 우산 개수
+    private double latitude; // 위도
+    private double longitude; // 경도
 }

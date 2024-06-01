@@ -1,8 +1,8 @@
 package com.glowDM.BP.umbrella.service;
 
-import com.glowDM.BP.umbrella.document.Store;
-import com.glowDM.BP.umbrella.dto.StoreDTO;
-import com.glowDM.BP.umbrella.repository.StoreRepository;
+import com.glowDM.BP.store.data.Store;
+import com.glowDM.BP.store.data.dto.StoreDTO;
+import com.glowDM.BP.store.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +35,6 @@ public class UmbrellaBorrowReturnService {
     }
 
     private StoreDTO convertToDTO(Store store) {
-        return new StoreDTO(store.getId(), store.getName(), store.getAddress(), store.getUmbrellaCount());
+        return new StoreDTO(store.getId(), store.getName(), store.getAddress(), store.getUmbrellaCount(), store.getLatitude(), store.getLongitude());
     }
 }

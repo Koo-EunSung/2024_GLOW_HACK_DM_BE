@@ -1,6 +1,6 @@
-package com.glowDM.BP.umbrella.repository;
+package com.glowDM.BP.store;
 
-import com.glowDM.BP.umbrella.document.Store;
+import com.glowDM.BP.store.data.Store;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface StoreRepository extends MongoRepository<Store, String> {
